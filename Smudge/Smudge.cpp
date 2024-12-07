@@ -83,7 +83,9 @@ VkInstance instance;
         for (const auto& extension : extensions){
             std::cout << '\t' << extension.extensionName << '\n';
         }
+        std::cout << extensionCount ;
         }
+        
 
 
     };

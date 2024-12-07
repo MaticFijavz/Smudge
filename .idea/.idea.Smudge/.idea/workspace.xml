@@ -9,6 +9,18 @@
   <component name="ChangeListManager">
     <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
       <changelist_data name="Matic" email="" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +154,8 @@
       <workItem from="1732724921189" duration="45000" />
       <workItem from="1732878390175" duration="27000" />
       <workItem from="1732878430365" duration="170000" />
-      <workItem from="1732878661748" duration="923000" />
+      <workItem from="1732878661748" duration="1555000" />
+      <workItem from="1732881429300" duration="1761000" />
     </task>
     <servers />
   </component>
