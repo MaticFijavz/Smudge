@@ -8,7 +8,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
-      <changelist_data name="Matic" email="" automatic="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,16 +40,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MaticFijavz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MaticFijavz/Smudge.git&quot;,
+    &quot;accountId&quot;: &quot;cf5c92e3-dc0d-466d-a16e-75312d0e23dc&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/stdexcept" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/vcruntime_exception.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Smudger/Smudger/app.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -60,6 +78,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/RiderProjects/Smudge/Smudge.sln&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,6 +88,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="9ef3645c-ff1e-400d-8fe9-26e22ab82105" reportId="Smudge/qodana/2024-12-14" />
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Smudge" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -145,7 +169,21 @@
       <workItem from="1732878661748" duration="1555000" />
       <workItem from="1732881429300" duration="1761000" />
       <workItem from="1733568709191" duration="626000" />
+      <workItem from="1734164066702" duration="18041000" />
+      <workItem from="1734211262696" duration="656000" />
+      <workItem from="1734271726648" duration="9000" />
+      <workItem from="1734271970971" duration="890000" />
+      <workItem from="1734273313729" duration="5710000" />
     </task>
+    <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
+      <option name="closed" value="true" />
+      <created>1734210396806</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734210396806</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +211,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

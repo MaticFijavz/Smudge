@@ -1,14 +1,20 @@
+//glfw/vulkan
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
+//std
 #include <iostream>
 #include <stdexcept>
 #include <vector>
 #include <cstring>
 #include <cstdlib>
+#include <map>
+#include <optional>
 
-constexpr uint32_t WIDTH = 800;
-constexpr uint32_t HEIGHT = 600;
+constexpr uint32_t WIDTH{800};
+constexpr uint32_t HEIGHT{600};
+
+VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
 
 const std::vector<const char*> validationLayers = {
     "VK_LAYER_KHRONOS_validation"
@@ -42,7 +48,7 @@ void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT
     }
 }
 
-class HelloTriangleApplication
+class Smudge
 {
 public:
     void run()
@@ -66,14 +72,132 @@ private:
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Smudge", nullptr, nullptr);
     }
 
     void initVulkan()
     {
         createInstance();
         setupDebugMessenger();
+        pickPhysicalDevice();
     }
+
+    void pickPhysicalDevice()
+    {
+        uint32_t deviceCount = 0;
+        vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
+
+        if (deviceCount == 0)
+        {
+            throw std::runtime_error("no GPU's supporting Vulkan found :/");
+        }
+        std::vector<VkPhysicalDevice> devices(deviceCount);
+        vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
+        for (const auto& device : devices)
+        {
+            if (isDeviceSuitable(device))
+            {
+                physicalDevice = device;
+                VkPhysicalDeviceProperties deviceProperties;
+                vkGetPhysicalDeviceProperties(device, &deviceProperties);
+                VkPhysicalDeviceFeatures deviceFeatures;
+                vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
+                break;
+            }
+        }
+
+        if (physicalDevice == VK_NULL_HANDLE)
+        {
+            throw std::runtime_error("no GPU doesn't support Vulkan - mald");
+        }
+
+        std::multimap<int, VkPhysicalDevice> candidates;
+        for (const auto& device : devices)
+        {
+            uint32_t score = rateDeviceSuitability(device);
+            candidates.insert(std::make_pair(score, device));
+        }
+
+        if (candidates.rbegin()->first > 0)
+        {
+            physicalDevice = candidates.rbegin()->second;
+        }
+        else
+        {
+            throw std::runtime_error("failes to find a suitable GPU");
+        }
+    }
+
+    uint32_t rateDeviceSuitability(VkPhysicalDevice device)
+    {
+        VkPhysicalDeviceProperties deviceProperties;
+        VkPhysicalDeviceFeatures deviceFeatures;
+        vkGetPhysicalDeviceProperties(device, &deviceProperties);
+        vkGetPhysicalDeviceFeatures(device, &deviceFeatures);
+
+        uint32_t score = 0;
+
+        //discrete GPUs are preferred since they're faster
+        if (deviceProperties.deviceType == VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU)
+        {
+            score += 1000;
+        }
+
+        //maxmimum possible size of textures affects graphics quality
+        score += deviceProperties.limits.maxImageDimension2D;
+
+        //engine needs geometry shaders (doi)
+        if (!deviceFeatures.geometryShader)
+        {
+            return 0;
+        }
+        std::cout << "score: " << score << '\n';
+        return score;
+    }
+
+    struct QueueFamilyIndices
+    {
+        std::optional<uint32_t> graphicsFamily;
+
+        bool IsComplete()
+        {
+            return graphicsFamily.has_value();
+        }
+    };
+
+    QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device)
+    {
+        QueueFamilyIndices indices;
+
+        uint32_t queueFamilyCount = 0;
+        vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, nullptr);
+        std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
+        vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, queueFamilies.data());
+
+        int i = 0;
+        for (const auto& queueFamily : queueFamilies)
+        {
+            if (queueFamily.queueFlags & VK_QUEUE_GRAPHICS_BIT)
+            {
+                indices.graphicsFamily = i;
+            }
+            if (indices.IsComplete())
+            {
+                break;
+            }
+            i++;
+        }
+
+
+        return indices;
+    }
+
+    bool isDeviceSuitable(VkPhysicalDevice device)
+    {
+        QueueFamilyIndices indices = findQueueFamilies(device);
+        return indices.IsComplete();
+    }
+
 
     void mainLoop()
     {
@@ -106,10 +230,10 @@ private:
 
         VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-        appInfo.pApplicationName = "Hello Triangle";
-        appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.pEngineName = "No Engine";
-        appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
+        appInfo.pApplicationName = "Smudge";
+        appInfo.applicationVersion = VK_MAKE_VERSION(0, 1, 0);
+        appInfo.pEngineName = "Silver Chariot";
+        appInfo.engineVersion = VK_MAKE_VERSION(0, 1, 2);
         appInfo.apiVersion = VK_API_VERSION_1_0;
 
         VkInstanceCreateInfo createInfo{};
@@ -217,7 +341,7 @@ private:
                                                         const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
                                                         void* pUserData)
     {
-        std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
+        std::cerr << "validation layer: " << pCallbackData->pMessage << '\n';
 
         return VK_FALSE;
     }
@@ -225,7 +349,7 @@ private:
 
 int main()
 {
-    HelloTriangleApplication app;
+    Smudge app;
 
     try
     {
@@ -233,7 +357,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << e.what() << '\n';
         return EXIT_FAILURE;
     }
 
