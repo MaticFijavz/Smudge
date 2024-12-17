@@ -7,10 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,7 +165,7 @@
       <workItem from="1734271970971" duration="890000" />
       <workItem from="1734273313729" duration="5973000" />
       <workItem from="1734362992039" duration="3723000" />
-      <workItem from="1734379896559" duration="2052000" />
+      <workItem from="1734379896559" duration="2207000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
@@ -186,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734280240258</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added logical device setup and destruction as well as device queue setup">
+      <option name="closed" value="true" />
+      <created>1734382030610</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734382030610</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +221,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you" />
     <MESSAGE value="Added Physical Device detection and queue Families." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Physical Device detection and queue Families." />
+    <MESSAGE value="added logical device setup and destruction as well as device queue setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logical device setup and destruction as well as device queue setup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
