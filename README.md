@@ -1,7 +1,25 @@
-jebi se jošt
+# Stone Ocean
 
+Stone ocean is a vulkan C/C++ graphics rendering engine
 
-Vulkan Engine ne dela rn also release morm popraut also morm se naucit kk se readme naredi
+## Installation
 
-opomba sebi:
-also vse datoteke po toti bojo u anglescini zaradi SMV
+download the zip [code](https://github.com/MaticFijavz/Smudge/archive/refs/heads/master.zip) 
+
+## Current usage
+shit dont work :( but imagine
+
+## Why
+
+tryna impress Resi
+
+## Roadmap
+The current roadmap as of editing:\
+[x] windowing\
+[x] Make a graphics pipeline\
+[ ] Compile SPIR-V code\
+[x] Device setup\
+[ ] comamnd pool\
+[ ] fixed function pipeline stages\
+[ ] Swap chain setup\
+[ ] command buffers\
