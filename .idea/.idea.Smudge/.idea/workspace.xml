@@ -7,7 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="" />
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,9 +54,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="cidr-memory-view://2" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/stdexcept" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/vcruntime_exception.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Smudger/Smudger/app.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -60,27 +71,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.Smudge.executor&quot;: &quot;Run&quot;,
-    &quot;C/C++ Project.Smudge.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/RiderProjects/Smudge/Smudge.sln&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;SolutionBuilderGeneralOptionsPage&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.Smudge.executor": "Run",
+    "C/C++ Project.Smudge.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/RiderProjects/Smudge/Smudge.sln",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="9ef3645c-ff1e-400d-8fe9-26e22ab82105" reportId="Smudge/qodana/2024-12-14" />
+      <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="7e8d233c-3977-4ea3-acf3-da8506969129" reportId="Smudge/qodana/2024-12-17" />
     </option>
   </component>
   <component name="RunManager">
@@ -166,6 +177,9 @@
       <workItem from="1734273313729" duration="5973000" />
       <workItem from="1734362992039" duration="3723000" />
       <workItem from="1734379896559" duration="2207000" />
+      <workItem from="1734459690015" duration="3741000" />
+      <workItem from="1734696617770" duration="2455000" />
+      <workItem from="1734702071531" duration="742000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
