@@ -26,10 +26,16 @@ VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMes
                                       const VkAllocationCallbacks* pAllocator,
                                       VkDebugUtilsMessengerEXT* pDebugMessenger)
 {
-    auto func = (PFN_vkCreateDebugUtilsMessengerEXT)vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
-    if (func != nullptr)
+    union
     {
-        return func(instance, pCreateInfo, pAllocator, pDebugMessenger);
+        PFN_vkVoidFunction voidFunc;
+        PFN_vkCreateDebugUtilsMessengerEXT func;
+    } converter;
+
+    converter.voidFunc = vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
+    if (converter.func != nullptr)
+    {
+        return converter.func(instance, pCreateInfo, pAllocator, pDebugMessenger);
     }
     return VK_ERROR_EXTENSION_NOT_PRESENT;
 }
@@ -37,10 +43,16 @@ VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMes
 void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger,
                                    const VkAllocationCallbacks* pAllocator)
 {
-    auto func = (PFN_vkDestroyDebugUtilsMessengerEXT)vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
-    if (func != nullptr)
+    union
     {
-        func(instance, debugMessenger, pAllocator);
+        PFN_vkVoidFunction voidFunc;
+        PFN_vkDestroyDebugUtilsMessengerEXT func;
+    } converter;
+
+    converter.voidFunc = vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
+    if (converter.func != nullptr)
+    {
+        converter.func(instance, debugMessenger, pAllocator);
     }
 }
 
@@ -67,17 +79,17 @@ public:
     }
 
 private:
-    GLFWwindow* window;
+    GLFWwindow* window{};
 
-    VkInstance instance;
-    VkDebugUtilsMessengerEXT debugMessenger;
-    VkSurfaceKHR surface;
+    VkInstance instance{};
+    VkDebugUtilsMessengerEXT debugMessenger{};
+    VkSurfaceKHR surface{};
 
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-    VkDevice device;
+    VkDevice device{};
 
-    VkQueue graphicsQueue;
-    VkQueue presentQueue;
+    VkQueue graphicsQueue{};
+    VkQueue presentQueue{};
 
     void initWindow()
     {
@@ -86,7 +98,7 @@ private:
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+        window = glfwCreateWindow(WIDTH, HEIGHT, "Smudge", nullptr, nullptr);
     }
 
     void initVulkan()
@@ -132,10 +144,10 @@ private:
 
         VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-        appInfo.pApplicationName = "Hello Triangle";
+        appInfo.pApplicationName = "Smudge";
         appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.pEngineName = "No Engine";
-        appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
+        appInfo.pEngineName = "King crimson";
+        appInfo.engineVersion = VK_MAKE_VERSION(0, 1, 4);
         appInfo.apiVersion = VK_API_VERSION_1_0;
 
         VkInstanceCreateInfo createInfo{};
@@ -213,11 +225,11 @@ private:
         std::vector<VkPhysicalDevice> devices(deviceCount);
         vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
 
-        for (const auto& device : devices)
+        for (const auto& devicePhysical : devices)
         {
-            if (isDeviceSuitable(device))
+            if (isDeviceSuitable(devicePhysical))
             {
-                physicalDevice = device;
+                physicalDevice = devicePhysical;
                 break;
             }
         }
@@ -233,10 +245,15 @@ private:
         QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
         std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
-        std::set<uint32_t> uniqueQueueFamilies = {
-            indices.graphicsFamily.value(),
-            indices.presentFamily.value()
-        };
+        std::set<uint32_t> uniqueQueueFamilies;
+        if (indices.graphicsFamily.has_value())
+        {
+            uniqueQueueFamilies.insert(indices.graphicsFamily.value());
+        }
+        if (indices.presentFamily.has_value())
+        {
+            uniqueQueueFamilies.insert(indices.presentFamily.value());
+        }
 
         float queuePriority = 1.0f;
         for (uint32_t queueFamily : uniqueQueueFamilies)
@@ -276,26 +293,32 @@ private:
             throw std::runtime_error("failed to create logical device!");
         }
 
-        vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
-        vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);
+        if (indices.graphicsFamily.has_value())
+        {
+            vkGetDeviceQueue(device, indices.graphicsFamily.value(), 0, &graphicsQueue);
+        }
+        if (indices.presentFamily.has_value())
+        {
+            vkGetDeviceQueue(device, indices.presentFamily.value(), 0, &presentQueue);
+        }
     }
 
-    bool isDeviceSuitable(VkPhysicalDevice device)
+    bool isDeviceSuitable(VkPhysicalDevice IsSuitableDevice)
     {
-        QueueFamilyIndices indices = findQueueFamilies(device);
+        QueueFamilyIndices indices = findQueueFamilies(IsSuitableDevice);
 
         return indices.isComplete();
     }
 
-    QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device)
+    QueueFamilyIndices findQueueFamilies(VkPhysicalDevice deviceQueue)
     {
         QueueFamilyIndices indices;
 
         uint32_t queueFamilyCount = 0;
-        vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, nullptr);
+        vkGetPhysicalDeviceQueueFamilyProperties(deviceQueue, &queueFamilyCount, nullptr);
 
         std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
-        vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, queueFamilies.data());
+        vkGetPhysicalDeviceQueueFamilyProperties(deviceQueue, &queueFamilyCount, queueFamilies.data());
 
         int i = 0;
         for (const auto& queueFamily : queueFamilies)
@@ -306,7 +329,7 @@ private:
             }
 
             VkBool32 presentSupport = false;
-            vkGetPhysicalDeviceSurfaceSupportKHR(device, i, surface, &presentSupport);
+            vkGetPhysicalDeviceSurfaceSupportKHR(deviceQueue, i, surface, &presentSupport);
 
             if (presentSupport)
             {

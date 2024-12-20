@@ -7,12 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="done replaced everything and it works like a flute. (b4 this i was getting validation layer errors left and right- thanks docs.vulkan.org/)">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
@@ -74,7 +73,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "C++ Project.Smudge.executor": "Run",
-    "C/C++ Project.Smudge.executor": "Debug",
+    "C/C++ Project.Smudge.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -89,9 +88,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" />
+        <option name="reportGuid" value="50cf3c68-4d78-406d-ac4a-30ed0595e78d" />
+        <option name="reportName" value="Smudge/qodana/2024-12-20" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
   <component name="QodanaReportsService">
     <option name="descriptions">
-      <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="7e8d233c-3977-4ea3-acf3-da8506969129" reportId="Smudge/qodana/2024-12-17" />
+      <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="50cf3c68-4d78-406d-ac4a-30ed0595e78d" reportId="Smudge/qodana/2024-12-20" />
     </option>
   </component>
   <component name="RunManager">
@@ -179,7 +190,7 @@
       <workItem from="1734379896559" duration="2207000" />
       <workItem from="1734459690015" duration="3741000" />
       <workItem from="1734696617770" duration="2455000" />
-      <workItem from="1734702071531" duration="742000" />
+      <workItem from="1734702071531" duration="2173000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
@@ -205,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734382030610</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="done replaced everything and it works like a flute. (b4 this i was getting validation layer errors left and right- thanks docs.vulkan.org/)">
+      <option name="closed" value="true" />
+      <created>1734702853820</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734702853820</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +255,8 @@
     <MESSAGE value="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you" />
     <MESSAGE value="Added Physical Device detection and queue Families." />
     <MESSAGE value="added logical device setup and destruction as well as device queue setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logical device setup and destruction as well as device queue setup" />
+    <MESSAGE value="done replaced everything and it works like a flute. (b4 this i was getting validation layer errors left and right- thanks docs.vulkan.org/)" />
+    <option name="LAST_COMMIT_MESSAGE" value="done replaced everything and it works like a flute. (b4 this i was getting validation layer errors left and right- thanks docs.vulkan.org/)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
