@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="added a semi-opertaional swap chain just cuz">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
@@ -181,7 +181,7 @@
       <workItem from="1734696617770" duration="2455000" />
       <workItem from="1734702071531" duration="6346000" />
       <workItem from="1734714173164" duration="185000" />
-      <workItem from="1734714375089" duration="5654000" />
+      <workItem from="1734714375089" duration="6198000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
@@ -223,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734704464588</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added a semi-opertaional swap chain just cuz">
+      <option name="closed" value="true" />
+      <created>1734726724344</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734726724344</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +264,8 @@
     <MESSAGE value="added logical device setup and destruction as well as device queue setup" />
     <MESSAGE value="done replaced everything and it works like a flute. (b4 this i was getting validation layer errors left and right- thanks docs.vulkan.org/)" />
     <MESSAGE value="fixed unoptimised code (thanks clang :3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed unoptimised code (thanks clang :3)" />
+    <MESSAGE value="added a semi-opertaional swap chain just cuz" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a semi-opertaional swap chain just cuz" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
