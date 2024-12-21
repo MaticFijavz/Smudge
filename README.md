@@ -1,4 +1,4 @@
-# Stone Ocean
+# Smudge
 
 Stone ocean is a vulkan C/C++ graphics rendering engine
 
