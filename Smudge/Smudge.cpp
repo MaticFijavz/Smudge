@@ -32,9 +32,9 @@ const bool enableValidationLayers = false;
 constexpr bool enableValidationLayers = true;
 #endif
 
-VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
-                                      const VkAllocationCallbacks* pAllocator,
-                                      VkDebugUtilsMessengerEXT* pDebugMessenger)
+static VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
+                                             const VkAllocationCallbacks* pAllocator,
+                                             VkDebugUtilsMessengerEXT* pDebugMessenger)
 {
     union
     {
@@ -50,8 +50,8 @@ VkResult CreateDebugUtilsMessengerEXT(VkInstance instance, const VkDebugUtilsMes
     return VK_ERROR_EXTENSION_NOT_PRESENT;
 }
 
-void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger,
-                                   const VkAllocationCallbacks* pAllocator)
+static void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger,
+                                          const VkAllocationCallbacks* pAllocator)
 {
     union
     {
@@ -71,7 +71,7 @@ struct QueueFamilyIndices
     std::optional<uint32_t> graphicsFamily;
     std::optional<uint32_t> presentFamily;
 
-    bool isComplete()
+    bool isComplete() const
     {
         return graphicsFamily.has_value() && presentFamily.has_value();
     }
@@ -127,6 +127,11 @@ private:
         createLogicalDevice();
         createSwapChain();
         CreateImageViews();
+        CreateGraphicsPipeline();
+    }
+
+    void CreateGraphicsPipeline()
+    {
     }
 
     void CreateImageViews()
@@ -162,13 +167,13 @@ private:
 
         VkSurfaceFormatKHR surfaceFormat = chooseSwapSurfaceFormat(swapChainSupport.formats);
         VkPresentModeKHR presentMode = chooseSwapPresentMode(swapChainSupport.presentModes);
-        VkExtent2D extent = chooseSwapExtent(swapChainSupport.capatibilites);
+        VkExtent2D extent = chooseSwapExtent(swapChainSupport.capabilities);
 
-        uint32_t imageCount = swapChainSupport.capatibilites.minImageCount + 1;
-        if (swapChainSupport.capatibilites.maxImageCount > 0 && imageCount > swapChainSupport.capatibilites.
+        uint32_t imageCount = swapChainSupport.capabilities.minImageCount + 1;
+        if (swapChainSupport.capabilities.maxImageCount > 0 && imageCount > swapChainSupport.capabilities.
             maxImageCount)
         {
-            imageCount = swapChainSupport.capatibilites.maxImageCount;
+            imageCount = swapChainSupport.capabilities.maxImageCount;
         }
 
         VkSwapchainCreateInfoKHR createInfo{};
@@ -197,7 +202,7 @@ private:
                 createInfo.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
             }
         }
-        createInfo.preTransform = swapChainSupport.capatibilites.currentTransform;
+        createInfo.preTransform = swapChainSupport.capabilities.currentTransform;
         createInfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
         createInfo.presentMode = presentMode;
         createInfo.clipped = VK_TRUE;
@@ -215,7 +220,7 @@ private:
         swapChainExtent = extent;
     }
 
-    void mainLoop()
+    void mainLoop() const
     {
         while (!glfwWindowShouldClose(window))
         {
@@ -292,7 +297,7 @@ private:
         }
     }
 
-    void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo)
+    static void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo)
     {
         createInfo = {};
         createInfo.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
@@ -418,7 +423,7 @@ private:
 
     struct SwapChainSupportDetails
     {
-        VkSurfaceCapabilitiesKHR capatibilites;
+        VkSurfaceCapabilitiesKHR capabilities;
         std::vector<VkSurfaceFormatKHR> formats;
         std::vector<VkPresentModeKHR> presentModes;
     };
@@ -427,7 +432,7 @@ private:
     {
         SwapChainSupportDetails details;
 
-        vkGetPhysicalDeviceSurfaceCapabilitiesKHR(swapChainDevice, surface, &details.capatibilites);
+        vkGetPhysicalDeviceSurfaceCapabilitiesKHR(swapChainDevice, surface, &details.capabilities);
 
         uint32_t formatCount;
         vkGetPhysicalDeviceSurfaceFormatsKHR(swapChainDevice, surface, &formatCount, nullptr);
@@ -451,7 +456,7 @@ private:
         return details;
     }
 
-    VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats)
+    static VkSurfaceFormatKHR chooseSwapSurfaceFormat(const std::vector<VkSurfaceFormatKHR>& availableFormats)
     {
         for (const auto& availableFormat : availableFormats)
         {
@@ -464,7 +469,7 @@ private:
         return availableFormats[0];
     }
 
-    VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& availablePresentModes)
+    static VkPresentModeKHR chooseSwapPresentMode(const std::vector<VkPresentModeKHR>& availablePresentModes)
     {
         for (const auto& availablePresentMode : availablePresentModes)
         {
@@ -477,7 +482,7 @@ private:
         return VK_PRESENT_MODE_FIFO_KHR;
     }
 
-    VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities)
+    VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities) const
     {
         if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max())
         {
@@ -500,7 +505,7 @@ private:
     }
 
 
-    bool isDeviceSuitable(VkPhysicalDevice suitableDevice)
+    bool isDeviceSuitable(VkPhysicalDevice suitableDevice) const
     {
         QueueFamilyIndices indices = findQueueFamilies(suitableDevice);
 
@@ -535,7 +540,7 @@ private:
     }
 
 
-    QueueFamilyIndices findQueueFamilies(VkPhysicalDevice deviceQueue)
+    QueueFamilyIndices findQueueFamilies(VkPhysicalDevice deviceQueue) const
     {
         QueueFamilyIndices indices;
 
@@ -572,13 +577,13 @@ private:
         return indices;
     }
 
-    std::vector<const char*> getRequiredExtensions()
+    static std::vector<const char*> getRequiredExtensions()
     {
         uint32_t glfwExtensionCount = 0;
-        const char** glfwExtensions;
-        glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
+        const char** glfw_extensions;
+        glfw_extensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
 
-        std::vector<const char*> extensions(glfwExtensions, glfwExtensions + glfwExtensionCount);
+        std::vector<const char*> extensions(glfw_extensions, glfw_extensions + glfwExtensionCount);
 
         if (enableValidationLayers)
         {
@@ -588,7 +593,7 @@ private:
         return extensions;
     }
 
-    bool checkValidationLayerSupport()
+    static bool checkValidationLayerSupport()
     {
         uint32_t layerCount;
         vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
@@ -631,10 +636,9 @@ private:
 
 int main()
 {
-    Smudge app;
-
     try
     {
+        Smudge app;
         app.run();
     }
     catch (const std::exception& e)
