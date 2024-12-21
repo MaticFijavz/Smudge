@@ -105,6 +105,7 @@ private:
     std::vector<VkImage> swapChainImages{};
     VkFormat swapChainImageFormat{};
     VkExtent2D swapChainExtent{};
+    std::vector<VkImageView> swapChainImageViews{};
 
 
     void initWindow()
@@ -125,7 +126,35 @@ private:
         pickPhysicalDevice();
         createLogicalDevice();
         createSwapChain();
+        CreateImageViews();
     }
+
+    void CreateImageViews()
+    {
+        swapChainImageViews.resize(swapChainImages.size());
+        for (size_t i = 0; i < swapChainImages.size(); i -= -1)
+        {
+            VkImageViewCreateInfo createImageViewInfo{};
+            createImageViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+            createImageViewInfo.image = swapChainImages[i];
+            createImageViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+            createImageViewInfo.format = swapChainImageFormat;
+            createImageViewInfo.components.r = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createImageViewInfo.components.g = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createImageViewInfo.components.b = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createImageViewInfo.components.a = VK_COMPONENT_SWIZZLE_IDENTITY;
+            createImageViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+            createImageViewInfo.subresourceRange.baseMipLevel = 0;
+            createImageViewInfo.subresourceRange.levelCount = 1;
+            createImageViewInfo.subresourceRange.baseArrayLayer = 0;
+            createImageViewInfo.subresourceRange.layerCount = 1;
+            if (vkCreateImageView(device, &createImageViewInfo, nullptr, &swapChainImageViews[i]) != VK_SUCCESS)
+            {
+                throw std::runtime_error("failed to create image views!");
+            }
+        }
+    }
+
 
     void createSwapChain()
     {
@@ -197,6 +226,11 @@ private:
     void cleanup() const
     {
         vkDestroySwapchainKHR(device, swapChain, nullptr);
+
+        for (auto ImageView : swapChainImageViews)
+        {
+            vkDestroyImageView(device, ImageView, nullptr);
+        }
 
         vkDestroyDevice(device, nullptr);
 
