@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <limits>
 #include <cstdint>
+#include <fstream>
 
 
 constexpr uint32_t WIDTH = 800;
@@ -64,6 +65,23 @@ static void DestroyDebugUtilsMessengerEXT(VkInstance instance, VkDebugUtilsMesse
     {
         converter.func(instance, debugMessenger, pAllocator);
     }
+}
+
+static std::vector<char> readFile(const std::string& filename)
+{
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+
+    if (!file.is_open())
+    {
+        throw std::runtime_error("failed to open file: " + filename);
+    }
+
+    size_t fileSize = file.tellg();
+    std::vector<char> buffer(fileSize);
+    file.seekg(0);
+    file.read(buffer.data(), fileSize);
+    file.close();
+    return buffer;
 }
 
 struct QueueFamilyIndices
@@ -132,6 +150,8 @@ private:
 
     void CreateGraphicsPipeline()
     {
+        auto VertShaderCode = readFile("shaders/shader_vert.spv");
+        auto FragShaderCode = readFile("shaders/shader_frag.spv");
     }
 
     void CreateImageViews()
