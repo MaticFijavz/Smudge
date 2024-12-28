@@ -163,6 +163,9 @@
   <ItemGroup>
     <ClCompile Include="Smudge.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="shader_vert.vert"/>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
