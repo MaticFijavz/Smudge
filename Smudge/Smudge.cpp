@@ -152,6 +152,25 @@ private:
     {
         auto VertShaderCode = readFile("shaders/shader_vert.spv");
         auto FragShaderCode = readFile("shaders/shader_frag.spv");
+
+        VkShaderModule vertShaderModule = createShaderModule(VertShaderCode);
+        VkShaderModule fragShaderModule = createShaderModule(FragShaderCode);
+
+        vkDestroyShaderModule(device, fragShaderModule, nullptr);
+        vkDestroyShaderModule(device, vertShaderModule, nullptr);
+    }
+
+    VkShaderModule createShaderModule(const std::vector<char>& code)
+    {
+        VkShaderModuleCreateInfo createShaderModuleInfo{};
+        createShaderModuleInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+        createShaderModuleInfo.codeSize = code.size();
+        createShaderModuleInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+        VkShaderModule shader_module;
+        if (vkCreateShaderModule(device, &createShaderModuleInfo, nullptr, &shader_module) != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to create shader module!");
+        }
     }
 
     void CreateImageViews()
