@@ -7,11 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="added:    Setup&#10;          Attachment description&#10;          Subpasses and attachment references&#10;          Render pass">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/shaders/shader_frag.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/shaders/shader_frag.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/shaders/shader_vert.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/shaders/shader_vert.vert" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.tlog/link.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.exe" afterDir="false" />
@@ -58,10 +61,7 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://5" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/stdexcept" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.41.34120/include/vcruntime_exception.h" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -208,7 +208,7 @@
       <workItem from="1734807438633" duration="732000" />
       <workItem from="1735305311873" duration="10330000" />
       <workItem from="1735493896352" duration="5181000" />
-      <workItem from="1735561317660" duration="2866000" />
+      <workItem from="1735561317660" duration="5803000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
@@ -330,7 +330,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735413414884</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added:    Setup&#10;          Attachment description&#10;          Subpasses and attachment references&#10;          Render pass">
+      <option name="closed" value="true" />
+      <created>1735565087811</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735565087811</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +381,8 @@
     <MESSAGE value="added a shader loading to the graphics pipeline" />
     <MESSAGE value="created shader modules" />
     <MESSAGE value="added shader stage creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added shader stage creation" />
+    <MESSAGE value="added:    Setup&#10;          Attachment description&#10;          Subpasses and attachment references&#10;          Render pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="added:    Setup&#10;          Attachment description&#10;          Subpasses and attachment references&#10;          Render pass" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
