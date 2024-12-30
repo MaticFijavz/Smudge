@@ -7,7 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="" />
+    <list default="true" id="56ef3298-14e4-424b-8d15-218c47635a5c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Smudge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/Smudge.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/Smudge.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/Smudge.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Smudge/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/Smudge.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +80,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Batch.compile.executor&quot;: &quot;Run&quot;,
     &quot;C++ Project.Smudge.executor&quot;: &quot;Run&quot;,
     &quot;C/C++ Project.Smudge.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -92,7 +102,16 @@
       <ReportDescription localRun="true" path="C:\Users\trakt\AppData\Local\Temp\qodana_output\qodana.sarif.json" reportGuid="50cf3c68-4d78-406d-ac4a-30ed0595e78d" reportId="Smudge/qodana/2024-12-20" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="C/C++ Project.Smudge">
+    <configuration name="compile" type="BatchConfigurationType" factoryName="Batch" temporary="true">
+      <module name="rider.module" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="WORKING_DIRECTORY" value="./Smudge/shaders" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="compile.bat" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Smudge" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
         <option name="CONFIGURATION" value="Debug" />
@@ -149,6 +168,11 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Batch.compile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -182,6 +206,9 @@
       <workItem from="1734714375089" duration="6198000" />
       <workItem from="1734768481218" duration="8498000" />
       <workItem from="1734807438633" duration="732000" />
+      <workItem from="1735305311873" duration="10330000" />
+      <workItem from="1735493896352" duration="5181000" />
+      <workItem from="1735561317660" duration="2866000" />
     </task>
     <task id="LOCAL-00001" summary="Added validation layers because vulkan fucking sucks and doesnt have normal throw exceptions fuck you">
       <option name="closed" value="true" />
@@ -255,7 +282,55 @@
       <option name="project" value="LOCAL" />
       <updated>1734807499736</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added vertex shader &#10;(GLSL uncompiled)">
+      <option name="closed" value="true" />
+      <created>1735409191058</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735409191058</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added fragment shader and edited vertex shader for inputting color to the fragment shader">
+      <option name="closed" value="true" />
+      <created>1735409954224</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735409954224</updated>
+    </task>
+    <task id="LOCAL-00012" summary="compiled GLSL shaders to SPIR-V binary code with compile.bat">
+      <option name="closed" value="true" />
+      <created>1735410304358</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735410304358</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added a shader loading to the graphics pipeline">
+      <option name="closed" value="true" />
+      <created>1735411237125</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735411237125</updated>
+    </task>
+    <task id="LOCAL-00014" summary="created shader modules">
+      <option name="closed" value="true" />
+      <created>1735412518959</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735412518959</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added shader stage creation">
+      <option name="closed" value="true" />
+      <created>1735413414884</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735413414884</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +367,13 @@
     <MESSAGE value="finalised the swap chain and  added image querying" />
     <MESSAGE value="created the image view" />
     <MESSAGE value="added a CreateGraphicsPipeline function for creating the graphics pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a CreateGraphicsPipeline function for creating the graphics pipeline" />
+    <MESSAGE value="added vertex shader &#10;(GLSL uncompiled)" />
+    <MESSAGE value="added fragment shader and edited vertex shader for inputting color to the fragment shader" />
+    <MESSAGE value="compiled GLSL shaders to SPIR-V binary code with compile.bat" />
+    <MESSAGE value="added a shader loading to the graphics pipeline" />
+    <MESSAGE value="created shader modules" />
+    <MESSAGE value="added shader stage creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="added shader stage creation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
